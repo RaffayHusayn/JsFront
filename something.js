@@ -5,9 +5,6 @@ function clicked(){
 }
 function save(){
 	values.push(counter);
-
-	for(var i = 0 ; i < values.length;i++){
-		console.log(values[i] + "-");
-	}
+	document.getElementById("save-el").innerText = values;
 }
 
