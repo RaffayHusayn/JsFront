@@ -18,27 +18,28 @@
             </td>
         </tr>
         <tr>
-            <td><button id="num-1" onclick="numPressed(1)"> 1 </button></td>
-            <td><button id="num-2" onclick="numPressed(2)"> 2 </button></td>
-            <td><button id="num-3" onclick="numPressed(3)"> 3 </button></td>
-            <td><button id="divide" onclick="operation(divide)">/ </button></td>
+            <td><button id="num-1" onclick="numPressed('1')"> 1 </button></td>
+            <td><button id="num-2" onclick="numPressed('2')"> 2 </button></td>
+            <td><button id="num-3" onclick="numPressed('3')"> 3 </button></td>
+            <td><button id="divide" onclick="numPressed('/')">/ </button></td>
         </tr>
         <tr>
-            <td><button id="num-4" onclick="numPressed(4)"> 4 </button></td>
-            <td><button id="num-5" onclick="numPressed(5)"> 5 </button></td>
-            <td><button id="num-6" onclick="numPressed(6)"> 6 </button></td>
-            <td><button id="multiply" onclick="operation(multiply)">*</button></td>
+            <td><button id="num-4" onclick="numPressed('4')"> 4 </button></td>
+            <td><button id="num-5" onclick="numPressed('5')"> 5 </button></td>
+            <td><button id="num-6" onclick="numPressed('6')"> 6 </button></td>
+            <td><button id="multiply" onclick="numPressed('*')">*</button></td>
         </tr>
         <tr>
-            <td><button id="num-7" onclick="numPressed(7)"> 7 </button></td>
-            <td><button id="num-8" onclick="numPressed(8)"> 8 </button></td>
-            <td><button id="num-9" onclick="numPressed(9)"> 9 </button></td>
-            <td><button id="subtract" onclick="operation(subtract)">-</button></td>
+            <td><button id="num-7" onclick="numPressed('7')"> 7 </button></td>
+            <td><button id="num-8" onclick="numPressed('8')"> 8 </button></td>
+            <td><button id="num-9" onclick="numPressed('9')"> 9 </button></td>
+            <td><button id="subtract" onclick="numPressed('-')">-</button></td>
         </tr>
         <tr>
-            <td></td>
-            <td colspan="2"><button id="num-0" onclick="numPressed(0)"> 0 </button></td>
-            <td><button id="add" onclick="operation(add)">+</button></td>
+            <td> <button id="decimal" onclick="numPressed('.')">.</button></td>
+            <td><button id="num-0" onclick="numPressed('0')"> 0 </button></td>
+            <td><button id="equals" onclick="calculate()"> = </button></td>
+            <td><button id="add" onclick="numPressed('+')">+</button></td>
         </tr>
 
     </table>

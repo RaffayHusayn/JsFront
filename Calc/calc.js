@@ -1,5 +1,5 @@
 var tempString = "" ;
-var operatorFlag = 0;
+var result = "";
 function operation(operator){
     operatorFlag++;
     console.log("operatorFlag = "+operatorFlag);
@@ -7,16 +7,13 @@ function operation(operator){
 }
 
 function numPressed(num){
-    if(operatorFlag === 1){
-        tempString = "";
-        document.getElementById("numtext").value = tempString;
-        tempString +=num;
-        document.getElementById("numtext").value = tempString;
-
-    }else{
     tempString += num;
     document.getElementById("numtext").value = tempString;
 
-    }
 
+}
+
+function calculate(){
+    tempString = eval(tempString);
+    document.getElementById("numtext").value = tempString;
 }
