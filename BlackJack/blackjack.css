@@ -14,6 +14,19 @@ h1{
 }
 
 #message-el{
-
     font-style: italic;
+}
+
+#start-game{
+    background-color: goldenrod;
+    padding: 20px 60px;
+    font-size: xx-large;
+    font-weight: bold;
+    color: rgb(12, 66, 12);
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+#start-game:hover{
+    background-color: rgb(228, 180, 60);
 }
