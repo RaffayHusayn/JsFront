@@ -19,7 +19,9 @@ h1{
 
 #start-game{
     background-color: goldenrod;
-    padding: 20px 60px;
+    /* padding: 20px 60px; */
+    width: 260px;
+    height: 70px;
     font-size: xx-large;
     font-weight: bold;
     color: rgb(12, 66, 12);
