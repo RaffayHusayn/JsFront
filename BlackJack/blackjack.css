@@ -17,7 +17,7 @@ h1{
     font-style: italic;
 }
 
-#start-game{
+button{
     background-color: goldenrod;
     /* padding: 20px 60px; */
     width: 260px;
@@ -28,6 +28,8 @@ h1{
     border-radius: 15px;
     border: none;
     cursor: pointer;
+    display: block;
+    margin: 20px auto ;
 }
 #start-game:hover{
     background-color: rgb(228, 180, 60);
