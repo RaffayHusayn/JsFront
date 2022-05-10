@@ -19,7 +19,6 @@ h1{
 
 button{
     background-color: goldenrod;
-    /* padding: 20px 60px; */
     width: 260px;
     height: 70px;
     font-size: xx-large;
@@ -29,8 +28,8 @@ button{
     border: none;
     cursor: pointer;
     display: block;
-    margin: 20px auto ;
+    margin: 8px auto ;
 }
-#start-game:hover{
+button:hover{
     background-color: rgb(228, 180, 60);
 }

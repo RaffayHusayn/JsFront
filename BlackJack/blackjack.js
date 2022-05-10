@@ -27,8 +27,12 @@ let isAlive = true;
 let hasBlackjack = false;
 let message = "";
 
-
 function startGame(){
+    renderGame();
+}
+
+
+function renderGame(){
     sumEl.textContent = "Sum: " + sum;
     cardEl.textContent = "Cards: " + firstCard + " " + secondCard;
     if(sum <= 20){
@@ -48,9 +52,8 @@ function startGame(){
 }
 
 function newCard(){
-    
-    let newCard = customRandomNumber(2 , 11);
-    console.log("New Card : " + newCard);
-    sum += newCard;
-    startGame();
+    let newCard = customRandomNumber(2, 11);
+    console.log(newCard);
+    sum +=newCard;
+    renderGame();
 }
