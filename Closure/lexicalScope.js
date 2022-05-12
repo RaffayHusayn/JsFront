@@ -1,4 +1,4 @@
-alert("code is starting");
+// alert("code is starting");
 console.log("This prints 3 everytime because we are using Var which creates a variable and hoist it in the global scope");
 // for(var i = 0 ; i < 3 ; i++){
 //     const log = ()=>{
