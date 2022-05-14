@@ -22,6 +22,7 @@ const customRandomNumber = (min, max)=>{
 
 let firstCard = customRandomNumber(2 , 11);
 let secondCard = customRandomNumber(2 , 11);
+let cards = [firstCard, secondCard];
 let sum = firstCard + secondCard;
 let isAlive = true;
 let hasBlackjack = false;
@@ -34,7 +35,12 @@ function startGame(){
 
 function renderGame(){
     sumEl.textContent = "Sum: " + sum;
-    cardEl.textContent = "Cards: " + firstCard + " " + secondCard;
+    // cardEl.textContent = "Cards: " + firstCard + " " + secondCard;
+    let cardsTemp = "Cards: ";
+    cards.forEach(card => {
+        cardsTemp = cardsTemp+ " " + card; 
+    });
+    cardEl.textContent = cardsTemp;
     if(sum <= 20){
         message = "Do you want to play again?"
         startGameBtn.textContent = "Play Again"
@@ -53,6 +59,7 @@ function renderGame(){
 
 function newCard(){
     let newCard = customRandomNumber(2, 11);
+    cards.push(newCard);
     console.log(newCard);
     sum +=newCard;
     renderGame();

@@ -25,8 +25,3 @@ function outside() {
 }
 console.log("Calling the correct Closure Loop");
 outside();
-
-function printName(){
-    console.log("raffay");
-}
-printName();
