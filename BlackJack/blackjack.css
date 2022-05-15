@@ -33,3 +33,6 @@ button{
 button:hover{
     background-color: rgb(228, 180, 60);
 }
+button:disabled{
+    background-color: gray;
+}

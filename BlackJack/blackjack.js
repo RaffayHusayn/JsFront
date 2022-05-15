@@ -1,10 +1,11 @@
-let messageEl = document.getElementById('message-el'); 
+let messageEl = document.getElementById('message-el');
 let startGameBtn = document.getElementById('start-game');
 let sumEl = document.getElementById('sum-el');
 let cardEl = document.getElementById('card-el');
+let newCardEl = document.getElementById("new-card");
 
 // Single line arrow function
-const customRandomNumber = (min, max)=>(Math.floor(Math.random() * (max - min) + min));
+const customRandomNumber = (min, max) => (Math.floor(Math.random() * (max - min) + min));
 
 /*
 Same Function written in different ways:
@@ -19,36 +20,38 @@ const customRandomNumber = (min, max)=>{
 }
 */
 
-
-let firstCard = customRandomNumber(2 , 11);
-let secondCard = customRandomNumber(2 , 11);
-let cards = [firstCard, secondCard];
-let sum = firstCard + secondCard;
-let isAlive = true;
+let sum = 0;
+let cards = [];
+let isAlive = false;
 let hasBlackjack = false;
 let message = "";
 
-function startGame(){
+function startGame() {
+    let firstCard = customRandomNumber(2, 11);
+    let secondCard = customRandomNumber(2, 11);
+    cards = [firstCard, secondCard];
+    sum = firstCard + secondCard;
+    isAlive = true;
     renderGame();
 }
 
 
-function renderGame(){
+function renderGame() {
     sumEl.textContent = "Sum: " + sum;
     // cardEl.textContent = "Cards: " + firstCard + " " + secondCard;
     let cardsTemp = "Cards: ";
     cards.forEach(card => {
-        cardsTemp = cardsTemp+ " " + card; 
+        cardsTemp = cardsTemp + " " + card;
     });
     cardEl.textContent = cardsTemp;
-    if(sum <= 20){
+    if (sum <= 20) {
         message = "Do you want to play again?"
         startGameBtn.textContent = "Play Again"
 
-    }else if(sum === 21){
+    } else if (sum === 21) {
         message = "You have got Blackjack!!";
         hasBlackjack = true;
-    }else{
+    } else {
         message = "You are out of the game!!";
         isAlive = false;
     }
@@ -57,10 +60,16 @@ function renderGame(){
 
 }
 
-function newCard(){
-    let newCard = customRandomNumber(2, 11);
-    cards.push(newCard);
-    console.log(newCard);
-    sum +=newCard;
-    renderGame();
+function newCard() {
+    console.log("is Alive : " + isAlive);
+    console.log("has blackjack : " + hasBlackjack);
+    if (isAlive === true && hasBlackjack === false) {
+        let newCard = customRandomNumber(2, 11);
+        cards.push(newCard);
+        sum += newCard;
+        renderGame();
+    } else {
+        newCardEl.disabled = true;
+        newCardEl.textContent = "Game Over";
+    }
 }
