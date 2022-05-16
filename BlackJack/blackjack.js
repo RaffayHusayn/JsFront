@@ -3,6 +3,7 @@ let startGameBtn = document.getElementById('start-game');
 let sumEl = document.getElementById('sum-el');
 let cardEl = document.getElementById('card-el');
 let newCardEl = document.getElementById("new-card");
+let playerEl = document.getElementById("player-el");
 
 // Single line arrow function
 const customRandomNumber = (min, max) => (Math.floor(Math.random() * (max - min) + min));
@@ -26,12 +27,20 @@ let isAlive = false;
 let hasBlackjack = false;
 let message = "";
 
+const player = {
+    name: "raffay",
+    chips: 45
+}
+player.age = 12;
+player.name = "ayesha";
+
 function startGame() {
     let firstCard = customRandomNumber(2, 11);
     let secondCard = customRandomNumber(2, 11);
     cards = [firstCard, secondCard];
     sum = firstCard + secondCard;
     isAlive = true;
+    playerEl.textContent = player.name + " : $" + player.chips + " age : "+ player.age;
     renderGame();
 }
 
