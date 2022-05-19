@@ -2,10 +2,10 @@
 example # 1 : Incorrect Closure Loop because there is no closure here and we will print 10 ten times
 */
 console.log("Calling the incorrect Closure Loop");
-for(var i= 0 ; i < 10 ; i++){
-    setTimeout(function(){
+for (var i = 0; i < 10; i++) {
+    setTimeout(function () {
         console.log(i);
-    }, i*1000);
+    }, i * 1000);
 }
 
 /*

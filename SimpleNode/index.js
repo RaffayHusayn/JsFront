@@ -22,20 +22,49 @@ let fighter = {
     move(move) {
         console.log(this.name + " is doing the " + move);
     },
-    move2(move) {
+    // this work because arrow function doesn't have this keyword but it takes this from the context outside which in this 
+    // case is move2 function
+    move2(move){
         return () => {
             console.log(this.name + " is doing the " + move);
         };
     },
-    move3(move){
-        console.log(`${this.name} is doing the third move `+move);
+    // this doesn't work because arrow function doesn't have this keyword or something like that
+    move3 : (move)=>{
+        console.log(this.name + " is doing the third move "+ move);
+    },
+    //using tempelate literals "${}" inside of `` not quotes
+    move4(move){
+        console.log(`${this.name} is doing the third move ${move}`); 
     }
 }
 
 fighter.move("inamari roll");
 fighter.move2("gillotine")();
-fighter.move3("rear naked choke");
+fighter.move3("guard");
+fighter.move4("rear naked choke");
+
+const Obj1 = {
+    val: "object 1 value"
+}
+
+class Class1{
+    constructor(){
+        this.class1Varibale = "object 3 variable";
+    }
+}
+
+const Obj2 = {
+    val2 : Obj1.val,
+    print(){
+        console.log(Obj1.val);
+    }
+
+}
 
 
 
+Obj2.print();
+const obj3 = new Class1();
+console.log("constructor object variable : " + obj3.class1Varibale);
 // 18005544555 guest relations after 12 the manager is Dan
