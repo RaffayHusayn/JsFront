@@ -67,4 +67,3 @@ const Obj2 = {
 Obj2.print();
 const obj3 = new Class1();
 console.log("constructor object variable : " + obj3.class1Varibale);
-// 18005544555 guest relations after 12 the manager is Dan

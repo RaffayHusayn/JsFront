@@ -31,8 +31,6 @@ const player = {
     name: "raffay",
     chips: 45
 }
-player.age = 12;
-player.name = "ayesha";
 
 function startGame() {
     let firstCard = customRandomNumber(2, 11);
