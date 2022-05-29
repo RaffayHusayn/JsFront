@@ -19,7 +19,7 @@ Employee.prototype.incrementSalary = function(percentage){
     this.salary = this.salary*(1+(percentage/100));
     console.log(`the salary after increment of ${this.name} is ${this.salary}`);
 };
-Employee.prototype.yearIncrement = function(){
+Employee.prototype.incrementYear = function(){
     this.durationOfEmployement++;
 }
 
