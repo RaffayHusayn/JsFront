@@ -25,12 +25,22 @@ Employee.prototype.incrementYear = function(){
 /*
  * Creating a child object which will inherit from the Employee Object
  */
+ /* Using apply which uses an array of arguments*/
 function Manager(managerSecret, ...args) {
     Employee.apply(this, args);
     this.managerSecret= managerSecret;
 }
 
-const vj = new Manager("vijay",20000, "newsecretpassword");
-console.log(vj);
+ /* Using call which uses individual arguments*/
+function RegionalManager(branchesUnderControl, managerSecret, name, salary){
+    Manager.call(this, managerSecret, name, salary);
+    this.branchesUnderControl = branchesUnderControl;
+}
+
+const vj = new Manager("newsecretpassword","vijay",20000);
+console.log(vj.managerSecret);
+
+const superManager = new RegionalManager(20, "regional manager secret", "Michael", 300000);
+console.log(superManager.name, superManager.branchesUnderControl, superManager.managerSecret);
 
 
