@@ -24,15 +24,20 @@ Employee.prototype.incrementYear = function(){
 
 /*
  * Creating a child object which will inherit from the Employee Object
+ * Using apply which uses an array of arguments
+ *
+ * Also using Rest operator (... as an argument in the function def) which 
+ * collects multiple elements and "condenses" them into a single element
  */
- /* Using apply which uses an array of arguments*/
 function Manager(managerSecret, ...args) {
+    // apply function takes a context as first argument
     Employee.apply(this, args);
     this.managerSecret= managerSecret;
 }
 
  /* Using call which uses individual arguments*/
 function RegionalManager(branchesUnderControl, managerSecret, name, salary){
+    // call function takes a context as first argument
     Manager.call(this, managerSecret, name, salary);
     this.branchesUnderControl = branchesUnderControl;
 }
