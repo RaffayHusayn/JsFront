@@ -24,7 +24,7 @@ console.log("pushing using [].push.apply()", arr2);
 // ============ Spreading a String ====================
 let name = "Raffay";
 let nameString = [...name];
-c"onsole.log(nameString); // ['R','a','f','f','a','y']
+console.log(nameString); // ['R','a','f','f','a','y']
 
 /*
  ================================================

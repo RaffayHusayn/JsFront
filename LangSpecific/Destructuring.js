@@ -36,7 +36,6 @@ let {specs : { ram: phoneRam , processor : phoneProcessor}, price:phonePrice} = 
 console.log(`Phone object desctructured : ${phoneRam} and ${phoneProcessor} with price ${phonePrice}`);
 
 /* ======= #5 Destructuring: You can destructure an function invokation ==============*/
-
 function Dog(breed, name, age){
     this.breed = breed;
     this.name = name;
@@ -48,6 +47,12 @@ let {breed, name, age} = Dog("german shepherd" , "bullet" , 4);// no need to use
 console.log(`Destructing the return object from a constructor function => breed : ${breed}, name : ${name}, age : ${age}`);
 
 
+/* ======= #6 Destructuring: Function argument ==============*/
+function sellPhones({company, specs: {ram, processor} , price}, seller){
+    console.log(`The seller ${seller} is selling his phone : company = ${company} | specs = ram ${ram} | processor = ${processor} | price = ${price}`);
+};
+
+sellPhones(phone, "Raffay");
 
 
 
