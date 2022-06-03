@@ -5,8 +5,9 @@ body{
 }
 
 input{
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 2px solid #5f9321 ;
     width : 100%;
     box-sizing: border-box;
 
@@ -15,4 +16,12 @@ input{
 button{
     display: block;
     background-color: #5f9321;
+    color: white;
+    padding: 5px 10px;
+    font-weight : bold;
+    border: none;
+}
+
+button:hover{
+    background-color:#7cad41
 }
