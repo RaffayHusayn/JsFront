@@ -1,3 +1,6 @@
+window.onload = function(){
+let btnElement = document.getElementById("callAsync");
+
 let objectList = [
     {name: "Raffay", age : 25},
     {name: "Ayesha", age : 23}
@@ -15,6 +18,7 @@ function returnList(){
 
 function addToList(newObj){
     let myPromise = new Promise((resolve, reject)=>{
+        btnElement.addEventListener('click',()=>{
         setTimeout(()=>{
             let error = true;
             if(newObj != null){
@@ -30,6 +34,7 @@ function addToList(newObj){
         console.log("inside of the settimeout in the addtolist function")
         }, 3000);
         console.log("outside of the settime out in the addtolist function")
+        })
     });
     return myPromise;
 }
@@ -38,4 +43,5 @@ console.log("outside of all the functions");
 let newObject = {name:"Nabia", age: 14};
 addToList(newObject)
 .then(returnList)
-.catch(err => console.log(err)); 
+.catch(err => console.log(err));
+};
