@@ -1,3 +1,5 @@
+window.onload = function(){
+let btnElement = document.getElementById("callAsync");
 let objectList = [
     {name: "Raffay", age : 25},
     {name: "Ayesha", age : 23}
@@ -14,10 +16,13 @@ function returnList(){
 }
 
 function addToList(newObj, callback){
-    setTimeout(()=>{
-        objectList.push(newObj);
-        callback();
-    }, 3000); 
+    btnElement.addEventListener("click", ()=>{
+        setTimeout(()=>{
+            objectList.push(newObj);
+            callback();
+        }, 3000); 
+    })
 } 
 let newObject = {name:"Nabia", age: 14};
 addToList(newObject, returnList);
+};
