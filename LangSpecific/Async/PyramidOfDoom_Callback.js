@@ -2,11 +2,11 @@ window.onload = function(){
 
 
     //function to download Image that takes some time
-    function downloadImage(url, callback){
+    function downloadImage(url, downloadTime, callback){
         setTimeout(()=>{
             console.log(`Image is downloaded from : ${url}`);
             callback();
-        }, 2000);
+        }, downloadTime);
     }
 
     //function to apply filter to image after it's downloaded
@@ -15,8 +15,14 @@ window.onload = function(){
     }
 
 
-    //calling the function
-
-    downloadImage("www.unsplash.com/house", applyFilter);
-
+    //calling the function one after another sequentially
+    downloadImage("www.unsplash.com/1", 3000, ()=>{
+        console.log("filter applied to the image");
+        downloadImage("www.unsplash.com/2", 2000, ()=>{
+            console.log("filter applied to the image");
+            downloadImage("www.unsplash.com/3", 1000, ()=>{
+                console.log("filter applied to the image");
+            });
+        });
+    });
 }
