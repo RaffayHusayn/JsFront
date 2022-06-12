@@ -1,6 +1,5 @@
 window.onload = function(){
 
-
     //function to download Image that takes some time
     function downloadImage(url, downloadTime, callback){
         setTimeout(()=>{
