@@ -12,6 +12,12 @@ function randomNumber(max){
     console.log(num);
 }
 
-
-
 const max = gifKeys.length -1;
+
+window.onload = function(){
+    let body = document.body;
+    let imageEl = document.getElementById("img-el");
+    // body.innerHTML = "<h1> printing something</h1>";
+    console.log(imageEl);
+    imageEl.src = gifDictionary[gifKeys[randomNumber(max)]];
+};
