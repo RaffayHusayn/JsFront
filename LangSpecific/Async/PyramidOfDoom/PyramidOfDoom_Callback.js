@@ -13,7 +13,6 @@ window.onload = function(){
         console.log("filter applied to the image");
     }
 
-
     //calling the function one after another sequentially
     downloadImage("www.unsplash.com/1", 3000, ()=>{
         console.log("filter applied to the image");
