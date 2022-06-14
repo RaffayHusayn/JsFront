@@ -17,7 +17,9 @@ const max = gifKeys.length -1;
 window.onload = function(){
     let body = document.body;
     let imageEl = document.getElementById("img-el");
-    // body.innerHTML = "<h1> printing something</h1>";
+    let headingEl = document.getElementById("heading-el");
     console.log(imageEl);
-    imageEl.src = gifDictionary[gifKeys[randomNumber(max)]];
+    let randomWord = gifKeys[randomNumber(max)];
+    headingEl.textContent = randomWord;
+    imageEl.src = gifDictionary[randomWord];
 };
