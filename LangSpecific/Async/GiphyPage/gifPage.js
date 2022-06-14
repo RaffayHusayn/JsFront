@@ -38,14 +38,19 @@ window.onload = function(){
     let body = document.body;
     let imageEl = document.getElementById("img-el");
     let headingEl = document.getElementById("heading-el");
+    let reloadBtn = document.getElementById("reload-btn");
+    reloadBtn.addEventListener("click", reload);
 
 
 
-    getImage()
-    .then((imageObj)=>{
-        headingEl.textContent = imageObj.word;
-        imageEl.src = imageObj.image;
-    })
-    .catch(err => console.log(err));
+    function reload(){
+        getImage()
+        .then((imageObj)=>{
+            headingEl.textContent = imageObj.word;
+            imageEl.src = imageObj.image;
+        })
+        .catch(err => console.log(err));
+    };
+
     
 };
