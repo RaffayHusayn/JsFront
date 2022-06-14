@@ -1,10 +1,12 @@
 const gifDictionary={
-    "killua" : "Gifs/killua-gif.gif",
-    "sasuke" : "Gifs/sasuke-gif.gif",
-    "yourname" : "Gifs/your-name-gif.gif"
+    "Hunter X Hunter" : "Gifs/killua-gif.gif",
+    "Naruto" : "Gifs/sasuke-gif.gif",
+    "Your Name" : "Gifs/your-name-gif.gif",
+    "Code Geass" : "Gifs/code-geass-gif.gif",
+    "Bleach" : "Gifs/bleach-gif.gif"
 }
 
-const gifKeys = ["killua", "sasuke", "yourname"];
+const gifKeys = ["Hunter X Hunter", "Naruto", "Your Name", "Code Geass", "Bleach"];
 
 function randomNumber(max){
     let num = Math.floor(Math.random() * (max + 1)) ;
