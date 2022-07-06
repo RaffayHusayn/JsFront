@@ -1,26 +1,20 @@
-const gifDictionary = {
-  "Hunter X Hunter": "Gifs/killua-gif.gif",
-  Naruto: "Gifs/sasuke-gif.gif",
-  "Your Name": "Gifs/your-name-gif.gif",
-  "Code Geass": "Gifs/code-geass-gif.gif",
-  Bleach: "Gifs/bleach-gif.gif",
-};
-
-const gifKeys = [
-  "Hunter X Hunter",
-  "Naruto",
-  "Your Name",
-  "Code Geass",
-  "Bleach",
-];
-
-function randomNumber(max) {
-  let num = Math.floor(Math.random() * (max + 1));
-  return num;
-  console.log(num);
+const gifDictionary={
+    "Hunter X Hunter" : "Gifs/killua-gif.gif",
+    "Naruto" : "Gifs/sasuke-gif.gif",
+    "Your Name" : "Gifs/your-name-gif.gif",
+    "Code Geass" : "Gifs/code-geass-gif.gif",
+    "Bleach" : "Gifs/bleach-gif.gif"
 }
 
-const max = gifKeys.length - 1;
+const gifKeys = ["Hunter X Hunter", "Naruto", "Your Name", "Code Geass", "Bleach"];
+
+function randomNumber(max){
+    let num = Math.floor(Math.random() * (max + 1)) ;
+    return num;
+    console.log(num);
+}
+
+const max = gifKeys.length -1;
 
 //function getImage(){
 //    let imageObj = {};
@@ -60,45 +54,53 @@ const max = gifKeys.length - 1;
 //        .catch(err => console.log(err));
 //    };
 //
-//
+//    
 //};
 
-function getImage() {
-  //creating an object to return everything in
-  let imageObj = {};
-  let imagePromise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      let randomWord = gifKeys[randomNumber(max)];
-      let randomGif = gifDictionary[randomWord];
-      imageObj.title = randomWord;
-      imageObj.url = randomGif;
-      console.log(randomWord);
-      console.log(randomGif);
-      if (imageObj.title != "" || imageObj.url != "") {
-        resolve(imageObj);
-      } else {
-        reject("there was an error");
-      }
-    }, 2000);
-  });
 
-  return imagePromise;
+
+function getImage(){
+    //creating an object to return everything in
+    let imageObj = {};
+    let imagePromise = new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            let randomWord = gifKeys[randomNumber(max)];  
+            let randomGif = gifDictionary[randomWord];
+            imageObj.title = randomWord;
+            imageObj.url = randomGif;
+            console.log(randomWord);
+            console.log(randomGif);
+            if(imageObj.title !="" || imageObj.url !=""){
+                resolve(imageObj);
+            }else{
+                reject("there was an error");
+            }
+        }, 2000);
+    });
+
+    return imageObj;
 }
 
-window.onload = function () {
-  let body = document.body;
-  let imageEl = document.getElementById("img-el");
-  let headingEl = document.getElementById("heading-el");
-  let reloadBtn = document.getElementById("reload-btn");
-  reload();
-  reloadBtn.addEventListener("click", reload);
+window.onload = function(){
+    let body = document.body;
+    let imageEl = document.getElementById("img-el");
+    let headingEl = document.getElementById("heading-el");
+    let reloadBtn = document.getElementById("reload-btn");
+    reload();
+    reloadBtn.addEventListener("click", reload);
 
-  function reload() {
-    getImage()
-      .then((obj) => {
-        headingEl.textContent = obj.title;
-        imageEl.src = obj.url;
-      })
-      .catch((err) => console.log(err));
-  }
-};
+
+    function reload(){
+        getImage()
+        .then(obj=>{
+            headingEl.textContent = obj.title;
+            imageEl.src = obj.url;
+        })
+        .catch(err=>console.log(err));
+
+    }
+}
+        
+
+
+
