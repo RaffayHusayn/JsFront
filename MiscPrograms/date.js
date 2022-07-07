@@ -1,6 +1,7 @@
 function greeting(){
     //finding the current time
     let date = new Date();
+    console.log(`the current date right now is ${date}`);
     let hours = date.getHours();
 
     if(hours > 4 && hours < 12){
